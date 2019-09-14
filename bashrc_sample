@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+export OA_ROOT=/tools/projects/erichang/BAG_2.0/oa_dist
+export OA_LINK_DIR=${OA_ROOT}/lib/linux_rhel50_gcc44x_64/opt
+export OA_INCLUDE_DIR=${OA_ROOT}/include/oa
