@@ -34,7 +34,7 @@ public:
 class OALayoutLibrary {
 public:
     OALayoutLibrary() :
-            is_open(false), dbu_per_uu(1000), lib_def_obs(1), lib_ptr(NULL), tech_ptr(NULL) {
+            is_open(false), dbu_per_uu(1000), mfg_grid_res(1), lib_def_obs(1), lib_ptr(NULL), tech_ptr(NULL) {
     }
     ~OALayoutLibrary() {
     }
@@ -66,6 +66,7 @@ private:
 
     bool is_open;
     oa::oaUInt4 dbu_per_uu;
+    oa::oaUInt4 mfg_grid_res;
     LayerMap lay_map;
     PurposeMap purp_map;
     LibDefObserver lib_def_obs;

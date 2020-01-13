@@ -93,6 +93,7 @@ void OALayoutLibrary::open_library(const std::string & lib_file, const std::stri
 
         // get database unit
         dbu_per_uu = tech_ptr->getDBUPerUU(oa::oaViewType::get(oa::oacMaskLayout));
+        mfg_grid_res = tech_ptr->getDefaultManufacturingGrid();
 
         // fill layer/purpose map
         oa::oaString temp;
@@ -204,7 +205,7 @@ void OALayoutLibrary::create_layout(const std::string & cell, const std::string 
 }
 
 oa::oaCoord OALayoutLibrary::double_to_oa(double val) {
-    return (oa::oaCoord) round(val * dbu_per_uu);
+    return (oa::oaCoord) round(val * dbu_per_uu / mfg_grid_res) * mfg_grid_res;
 }
 
 void OALayoutLibrary::array_figure(oa::oaFig * fig_ptr, unsigned int nx, unsigned int ny,
